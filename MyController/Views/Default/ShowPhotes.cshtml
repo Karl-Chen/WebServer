@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowPhotes</title>
+</head>
+<body>
+    @* 把HTML格式的字串轉換成HTML, 使用@Html.Raw() *@
+    @Html.Raw(ViewData["Photos"])
+</body>
+</html>

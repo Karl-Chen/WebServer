@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Razor語法練習";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@* 這裡是註解
+在view裡面寫程式要用@{
+程式碼
+}
+在view裡面寫for if 都是用@for(){} 或是@if(){}else {}
+*@
+
+@{
+    string name = "John";
+    var name2 = "";
+    int Math = 85, Eng = 100, Chi = 94;
+    bool flag = true;
+    //輸出畫面，@:後面接輸出內容，要接變數就用@接變數名稱
+    @:My Name is @name
+    <h2>My Name is @name</h2>
+}
+<h2>My Name is @name</h2>
+<h2>@(Math + Eng)</h2>
+<h2>@Math + @Eng</h2>
+<h2>@Math + @Eng = @(Math + Eng)</h2>
+<h1>歡迎@(name)光臨</h1>
+<h1>歡迎@name光臨</h1>
+<h1>歡迎 @name 光臨</h1>
+
+@if (flag)
+{
+    <h2>歡迎登入本系統</h2>
+}
+else
+{
+    <h2>您的帳號密碼有錯</h2>
+}
+
+@{
+    string[] id = { "A01", "A02", "A03", "A04", "A05", "A06", "A07" };
+    string[] NightMarket = { "瑞豐夜市", "新堀江商圈", "六合夜市", "青年夜市", "花園夜市", "大東夜市", "武聖夜市" };
+    string[] address = { "813高雄市左營區裕誠路", "800高雄市新興區玉衡里", "800高雄市新興區六合二路",
+                "80652高雄市前鎮區凱旋四路758號" , "台南市北區海安路三段533號", "台南市東區林森路一段276號",
+                "台南市中西區武聖路69巷42號"};
+}
+<div class="col-3">
+    <ul class="list-group">
+        @foreach (var item in NightMarket)
+        {
+            <li class="list-group-item">@item</li>
+        }
+    </ul>
+</div>

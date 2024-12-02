@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@*enctype="multipart/form-data" 加密方式，multipart/form-data固定寫法，只要有上傳檔案元件就要加這個屬性，
+    不加的話檔案不會被上傳*@
+@*<form action="/FileUpload/Create" method="post">*@
+<form asp-action="Create" enctype="multipart/form-data">
+    <p class="col-xl-6 col-md-4">照片上傳：<input type="file" class="form-control" name="photo" id="photo" /></p>
+    <p><input type="submit" value="上傳" class="btn btn-primary" /></p>
+
+</form>
+<h1>@ViewData["Message"]</h1>

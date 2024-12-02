@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MyView.Models.NightMarket>
+@{
+    ViewData["Title"] = "來去逛夜市吧~";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-4 col-md-6 card">
+            <img src="~/images/@(item.ID).jpg" width="100%" class="img-thumbnail"/>
+            <h3>@item.Name</h3>
+            <p class="text-end"><a href="https://www.google.com.tw/maps/search/@item.Address" target="_blank" class="btn btn-outline-danger">點我導覽</a></p>
+        </div>
+    }
+</div>
+
+<div class="row">
+    @foreach (var it in Model)
+    {
+        <div class="col-xl-4 col-md-6 card">
+            <img src="~/images/@(it.ID).jpg" width="100%" class="img-thumbnail"/>
+            <h3>@it.Name</h3>
+            <p class="text-end"><a class="btn btn-outline-danger" href="https://www.google.com.tw/maps/search/@it.Address" target="_blank">點我導覽</a></p>
+        </div>
+    }
+</div>

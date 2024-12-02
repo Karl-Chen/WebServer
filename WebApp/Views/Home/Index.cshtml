@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "我的首頁";
+}
+
+<div class="text-center card border-primary">
+    <h1 class="display-4 btn btn-danger">Welcome</h1>
+    <h1>Welcome My HomePage!!</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <audio id="audioPlayer" title="曉之車" src="audio/retracks-fictionjunction-yuuka-曉之車-retracks.mp3" preload="auto"
+           onended="musicState()"></audio>
+    <hr>
+    <div id="controlPanel">
+        <select id="songSelect" onclick="changeSong(0)">
+            <option value="audio/retracks-fictionjunction-yuuka-曉之車-retracks.mp3">曉之車</option>
+            <option value="audio/中島美嘉-雪の華-music-video.mp3">雪之華</option>
+            <option value="audio/焰之扉.mp3">焰之扉</option>
+            <option value="audio/水之証.mp3">水之証</option>
+            <!-- <option>55555</option> -->
+        </select>
+        <hr>
+        <span onclick="changeSong(-1)">9</span>
+        <span onclick="funcChangeTime(-10)">7</span>
+        <span onclick="stopMusic()">&lt;</span> <!-- &lt; 就是 < -->
+        <span id="btnFunc" onclick="playMusic()">4</span>
+        <span onclick="funcChangeTime(10)">8</span>
+        <span onclick="changeSong(1)">:</span>
+        <span id="btnMute" onclick="muteVolume()">V</span><!--靜音-->
+        <span onclick="setCircle()">q</span>
+        <span onclick="setRandom()">s</span>
+        <span onclick="setAllLoop()">`</span>
+        <hr>
+        <input id="volumeRange" type="range" value="70" oninput="changeVolumeValue()">
+        <input type="button" value="-" onclick="setVolume(-1)">
+        <input type="button" value="+" onclick="setVolume(1)">
+        <input type="text" readonly>
+        <hr>
+        <input type="range" value="0" min="0" oninput="setProgress()">
+        <hr>
+        <div>00:00 / 00:00</div>
+        <div>歡迎使用我的播放器</div>
+        <div>正常</div>
+
+    </div>
+    <!-- <span class="btnPlay" style="font-family: 'Webdings';" onclick="pauseMusic()">;</span> -->
+    <hr>
+</div>

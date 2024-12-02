@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "商品新增作業";
+}
+@* 假設有一個商品資料表，欄位：商品編號、商品名稱、商品價格 *@
+<h1 class="text-center shadow">@ViewData["Title"]</h1>
+<hr/>
+@* 表單送出(submit)會丟到form的裡面寫的action ，表單資料中method 99%用post方式傳遞資料 *@
+<form action="/SimpleBind/Create" method="post">
+    <p>商品編號：<input type="text" name="id" class="form-control"/></p>
+    <p>商品名稱：<input type="text" name="name" class="form-control" /></p>
+    <p>商品價格：<input type="number" name="price" class="form-control" /></p>
+    <p><input type="submit" value="送出" class="btn btn-primary" /></p>
+</form>
+<hr />
+<h1>@ViewData["Result"]</h1>

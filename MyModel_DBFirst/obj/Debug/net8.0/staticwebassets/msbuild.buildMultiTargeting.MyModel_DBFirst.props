@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MyModel_DBFirst.props" />
+</Project>
