@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyModel_CodeFirst.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@* //2.2.1 修改適合前台呈現的Index View *@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-6">
+            <div class="card mb-4 border-info">
+                @if (item.Photo != null)
+                {
+                    <img src="~/BookPhotos/@item.Photo" class="card-img-top img-thumbnail"/>
+                }
+                <div class="card-body">
+                    <h3> @item.Title</h3>
+                    <p>@Html.Raw( item.Description.Replace("\r\n", "<br>"))</p>
+                </div>
+                <div class="card-footer">
+                    <p class="text-end">@Html.DisplayFor(modelItem =>@item.Author) 於 @Html.DisplayFor(modelItem => item.TimeStmp) 發表 |
+                        <a class="btn btn-info" asp-action="Display" asp-route-id="@item.BookID"> 點我看詳細</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

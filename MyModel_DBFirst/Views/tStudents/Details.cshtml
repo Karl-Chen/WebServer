@@ -28,6 +28,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.fScore)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DeptID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department.DeptName)
+        </dd>
     </dl>
 </div>
 <div>

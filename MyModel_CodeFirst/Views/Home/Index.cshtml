@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MyModel_CodeFirst.Models.Book>
+@* IEnumerable是因為資料是複數型態 *@
+@{
+    Layout = "_UserLayout";
+    ViewData["Title"] = "Home Page";
+    string active = "active";
+}
+
+<div id="HomePhoto" class="carousel slide my-3" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            <button type="button" data-bs-target="#HomePhoto" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-current="true" aria-label="Slide @i"></button>
+        }
+    </div>
+    <div class="carousel-inner">
+
+        @foreach(var item in Model)
+        {
+            <div class="carousel-item @active">
+                <img src="~/BookPhotos/@item.Photo" class="d-block w-100 " alt="@item.Description">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>@item.Title</h5>
+                </div>
+            </div>
+            active = "";
+        }
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#HomePhoto" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#HomePhoto" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="row">
+    @await Component.InvokeAsync("VCBooksTopThree")
+</div>
