@@ -60,6 +60,22 @@ namespace MyModel_CodeFirst.Migrations
                     b.ToTable("Book");
                 });
 
+            modelBuilder.Entity("MyModel_CodeFirst.Models.Login", b =>
+                {
+                    b.Property<string>("Account")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.HasKey("Account");
+
+                    b.ToTable("Login");
+                });
+
             modelBuilder.Entity("MyModel_CodeFirst.Models.Rebook", b =>
                 {
                     b.Property<string>("ReBookID")

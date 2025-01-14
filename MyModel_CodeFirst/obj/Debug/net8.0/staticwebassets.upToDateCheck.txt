@@ -7,9 +7,9 @@ wwwroot\BookPhotos\38ee0ae9-4120-4011-9d5d-c1cb24d2275e.jpg
 wwwroot\BookPhotos\3df107c7-35a4-4bd3-be42-011b4f8ad1a3.jpg
 wwwroot\BookPhotos\5f12ce1d-3b36-4fd0-849d-61e7fe104019.jpg
 wwwroot\BookPhotos\741c265b-1c9c-4615-9ae9-6699ca09c820.jpg
-wwwroot\BookPhotos\7588b300-3e34-443c-892a-970c09752db3.jpg
 wwwroot\BookPhotos\7e9eaeb4-608b-4987-bc90-052fe56799ea.jpg
 wwwroot\BookPhotos\8f23002d-a456-4ccd-9e29-7a254b4f3de7.jpg
+wwwroot\BookPhotos\97912a90-7791-4fdb-9b89-cc867a7596c8.jpg
 wwwroot\BookPhotos\caa9550f-1079-481d-ab61-1f4f500ad015.jpg
 wwwroot\css\site.css
 wwwroot\favicon.ico

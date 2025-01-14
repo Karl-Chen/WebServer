@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MyModel_CodeFirst.Models.Book>
+
+@{
+    ViewData["Title"] = "訪客留言板管理";
+}
+
+<h3 class="text-center">@ViewData["Title"]</h3>
+
+@* //4.1.5 修改Index View將Photo及ImageType欄位、Create、Edit及Details超鏈結移除 *@
+@* //4.1.6 依喜好自行修改介面 *@
+<div class="row ">
+    @foreach (var item in Model)
+    {
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="row no-gutters">
+                    <div class="col-2 d-flex justify-content-center align-items-center">
+                        <img src="~/BookPhotos/@item.Photo" width="150" />
+                    </div>
+                    <div class="col-9">
+                        <div class="card-body">
+                            <h3 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h3>
+                            <p class="card-text text-truncate" style="max-width:800px">@Html.DisplayFor(modelItem => item.Description)</p>
+                            <p class="card-text text-end">@Html.DisplayFor(modelItem => item.TimeStmp)</p>
+                        </div>
+                    </div>
+                    <div class="col-1 d-flex justify-content-center align-items-center">
+                        <div class="row">
+                            <form asp-action="Delete" asp-controller="BooksManage" asp-route-id="@item.BookID">
+                                <button class="btn btn-danger mb-1" style="max-width:70px" type="submit" onclick="return confirm('確定要刪除嗎？')">刪除</button>
+                            </form>
+                            
+                            <button class="btn btn-success mt-1" style="max-width:70px" type="button" data-bs-toggle="collapse" data-bs-target="#B@(item.BookID)">
+                                顯示
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="B@(item.BookID)">
+                        @* //2.3.10 編寫Display View，加入VCReBooks ViewComponent *@
+                        @await Component.InvokeAsync("VCReBooks", new { bookID = item.BookID, isDel = true })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts{
+    <script>
+        function delReBook(reBookId, BookID) {
+            if (confirm("確定要刪除嗎？"))
+            {
+                $.ajax({
+                    type:"post",
+                    url:"/BooksManage/DeleteReBook",
+                    data:{id:reBookId},
+                    success:function() {
+                        //4.4.8 利用GetRebookByViewComponent Action局部更新畫面以顯示刪除後的回覆留言資料畫面
+                        $('#B'+BookID).load("/BooksManage/GetRebookByViewComponent/" + BookID);
+                    }
+                });
+            }
+        }
+    </script>
+}

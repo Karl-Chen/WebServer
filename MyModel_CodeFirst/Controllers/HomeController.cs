@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyModel_CodeFirst.Models;
@@ -6,28 +7,25 @@ using System.IO;
 
 namespace MyModel_CodeFirst.Controllers
 {
+   
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly GuestBookContext _context;
-
+        
         public HomeController(ILogger<HomeController> logger, GuestBookContext context)
         {
-            _context = context;
             _logger = logger;
+            _context = context;
+ 
         }
 
         public async Task<IActionResult> Index()
         {
-            var photos = await _context.Book.Where(b=>b.Photo != null).OrderByDescending(b=>b.TimeStmp).Take(5).ToListAsync();
+            //3.1.2  在HomeController中加入讀取Book資料表的程式
+            var photos = await _context.Book.Where(b => b.Photo != null).OrderByDescending(b => b.TimeStmp).Take(5).ToListAsync();
             return View(photos);
         }
-
-        //public async Task<IActionResult> GetTopThree()
-        //{
-        //    var books = await _context.Book.OrderByDescending(b => b.TimeStmp).Take(3).ToListAsync();
-        //    return View(books);
-        //}
 
         public IActionResult Privacy()
         {
@@ -197,6 +195,152 @@ namespace MyModel_CodeFirst.Controllers
 
 //----------------------------------這條線以上是評量範圍-----------------------------------------------
 
+//3     介面設及與佈局
+//3.1   Bootstrap應用-利用Bootstrap裡的功能作首頁照片輪播
+//3.1.1 在Home/Index View中使用Bootstrap的Carousel元件
+//3.1.2 在HomeController中加入讀取Book資料表的程式
+//3.1.3 編輯Home/Index View實現照片輪播效果 
+
+//3.2   佈局設計
+//3.2.1 在Shared資料夾中建立_UserLayout.cshtml佈局檔
+//3.2.2 在Shared資料夾中建立_Layout.cshtml佈局檔
+//3.2.3 設定Home/Index View的Layout為_UserLayout
+//3.2.4 建立VCBooksTopThree.cs 的 ViewComponent
+//3.2.5 撰寫VCBooksTopThree Class使其能讀出最新三筆留言
+//3.2.6 在Shared/Components資料夾中建立VCBooksTopThree資料夾，並在其中建立Default.cshtml檔
+//3.2.7 撰寫VCBooksTopThree的Default View，使其能顯示最新三筆留言
+//3.2.8 在Home/Index View中加入VCBooksTopThree ViewComponent
+
+//3.3   Layout的處理
+//3.3.1 將Viewstart.cshtml中的Layout設定為_UserLayout
+//3.3.2 修改_UserLayout的選單內容及呈現方式
 
 
+//4.    製作留言板後台管理功能
+
+//4.1   製作自動生成的Book資料表CRUD
+//4.1.1 在Controllers資料夾上按右鍵→加入→控制器
+//4.1.2 選擇「使用EntityFramework執行檢視的MVC控制器」→按下「加入」鈕
+//4.1.3 在對話方塊中設定如下
+//      模型類別: Book(MyModel_CodeFirst.Models)
+//      資料內容類別: GuestBookContext(MyModel_CodeFirst.Models)
+//      勾選 產生檢視
+//      勾選 參考指令碼程式庫
+//      勾選 使用版面配置頁
+//      控制器名稱使用(BooksManageController)
+//      按下「新增」鈕
+//4.1.4 執行/BooksManage/Index 進行測試
+//4.1.5 修改Index View將Photo及ImageType欄位、Create、Edit及Details超鏈結移除
+//4.1.6 依喜好自行修改介面
+
+
+//4.2   調整BooksManageController內容 
+//4.2.1 改寫Index Action的內容，將留言依新到舊排序
+//4.2.2 移除Details Action (亦可一併刪除 Details.cshtml)
+//4.2.3 移除Create Action (亦可一併刪除 Create.cshtml)
+//4.2.4 移除Edit Action (亦可一併刪除 Edit.cshtml)
+//4.2.5 刪除Delete.cshtml
+
+
+//4.3   在Index View呈現回覆留言資料
+//4.3.1 在Index View中加入呈現回覆留言的ViewComponent
+//4.3.2 新增一個VCRebooks/Delete.cshtml View
+//4.3.3 將Delete View重新排版並加入刪除回覆留言的按鈕
+//4.3.4 在VCRebooks ViewComponent中加入isDel參數判斷是否呈現Delete View
+//4.3.5 在Index View中呈現回覆留言的ViewComponent增加isDel參數的傳遞
+//4.3.6 使用Bootstrap的Collapse Component來呈現留言資料
+//4.3.7 將呈現回覆留言的id改為動態產生
+//4.3.8 測試畫面效果
+
+
+
+//4.4   製作刪除留言功能
+//4.4.1 在BooksManageController中的Delete Action加入刪除圖片的程式
+//4.4.2 將BooksManage/Index View的刪除按鈕改寫成表單傳送
+//4.4.3 測試刪除留言功能
+//      ※這裡所製作的刪除會將有關聯的回覆留言資料一併刪除※
+//4.4.4 在BooksManageController加人中的DeleteReBook Action
+//4.4.5 將VCRebooks/Delete View的刪除鈕製作以Ajax方式刪除以保留頁面不整頁更新
+//4.4.6 撰寫Ajax程式以呼叫DeleteReBook Action
+//4.4.7 在BooksManageController中加入GetRebookByViewComponent Action
+//4.4.8 利用GetRebookByViewComponent Action局部更新畫面以顯示刪除後的回覆留言資料畫面
+//4.4.9 測試刪除留言功能
+//      ※這裡所製作的刪除會將有關聯的回覆留言資料一併刪除※
+
+
+
+//5   登入功能製作
+
+//5.1   資料庫變更
+//5.1.1 用Code-First方式在資料庫裡新增一個Login資料表存放管理者帳號密碼
+//5.1.2 在Models資料夾裡建立Login類別做為模型
+//5.1.3 Models資料夾上按右鍵→加入→類別，檔名取名為Login.cs，按下「新增」鈕
+//5.1.4 設計Login類別的各屬性，包括名稱、資料類型及其相關的驗證規則及顯示名稱(DisplayName)
+//5.1.5 修改GuestBookContext類別的內容，加入描述資料庫裡Login的資料表
+//5.1.6 在套件管理器主控台(檢視 > 其他視窗 > 套件管理器主控台)下指令
+//      ※※※注意注意※※※ 請先確定專案是否正確
+//      ※※※注意注意※※※ 請先確定專案是否正確
+//      ※※※注意注意※※※ 請先確定專案是否正確
+//      (1)Add-Migration AddLoginTable
+//      (2)Update-database
+//5.1.7 至SSMS中查看是否有成功建立Login資料表
+//5.1.8 在Login資料表中建立一筆帳號密碼的資料(admin, 12345678)
+
+
+
+//5.2   製作Login功能與畫面
+//5.2.1 在Controllers資料夾上按右鍵→加入→控制器
+//5.2.2 選擇「MVC控制器-空白」→按下「加入」鈕
+//5.2.3 檔名取名為「LoginController」→按下「新增」鈕
+//5.2.4 建立Get與Post的Login Action
+//5.2.5 建立Login View(Login Action中按右鍵→新增檢視→Razor檢視→按下「加入」鈕)
+//      在對話方塊中設定如下
+//      檢視稱: Login (使用預設名稱)
+//      範本: Create
+//      模型類別: Login(MyModel_CodeFirst.Models)
+//      資料內容類別: GuestBookContext(MyModel_CodeFirst.Models)
+//      不勾選 建立成局部檢視
+//      勾選 參考指令碼程式庫
+//      勾選 使用版面配置頁
+//5.2.6 將ViewData["Error"]加入Login View
+//5.2.7 測試
+
+
+//※※※注意注意※※※
+//※此時的登入與非登入狀況根本沒有被紀錄，即使沒有登入，仍能直接以url進入後台管理頁面※
+//※因此我們必須將有登入過的使用者紀錄下來，如果沒有登入紀錄的使用者即使透過url也進不去後台管理頁面※
+
+
+//5.3   建立進入後台必須是登入狀態實作
+//5.3.1 在_ViewStart.cshtml中加入前台及後台使用不同Layout的判斷式
+//5.3.2 在_UserLayout.cshtml中加入登入後台的按鈕
+//5.3.3 在Program.cs中註冊及啟用Session
+//5.3.4 在LoginController的Post Login Action中加入Session紀錄登入狀態
+//5.3.5 在_ViewStart.cshtml加入未登入則將網頁自動導往/Home/Index的判斷式
+//5.3.6 測試
+
+
+//5.4   登出功能
+//5.4.1 在LoginController加入Logout Action
+//5.4.2 在_Layout.cshtml及_UserLayout.cshtml加入登出的按鈕
+
+
+
+//6     基本的錯誤處理(Error Handle)
+//6.1   測試:故意讓程式發生例外看看結果
+//6.1.1 在PostBooksController裡寫一個會發生例外的Action如下
+//public IActionResult ExceptionTest()
+//{
+//    int a = 0;
+//    int s = 100 / a;
+//    return View();
+//}
+//6.1.2 利用原本預設的Home Controller Error Handler來處理例外
+//6.1.3 修改 Program.cs中的程式碼，將是否在開發模式下的錯誤處理判斷註解掉
+//6.1.4 測試:再次故意讓程式發生例外看看結果
+//6.1.5 修改Error.cshtml內容
+//6.2   測試:故意讓程式發生HttpNotFound(404)錯誤
+//6.2.1 在Program.cs中的程式碼註冊處理HttpNotFound(404)錯誤的Error Handler
+//6.2.2 測試:再次故意讓程式發生HttpNotFound(404)錯誤
+//      ※最基本的錯誤處理，就是不讓使用者看到系統錯誤訊息※
 

@@ -1,0 +1,145 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\A2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A2001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\A2002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A2002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\A3001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A3001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\A3002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A3002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\A4001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A4001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B1001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B2001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B2002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B2002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B3001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B3002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B3003.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3003.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B3004.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3004.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B3005.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3005.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\B4001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B4001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C1001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C1002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C1002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C1003.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C1003.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C2001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C2002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C2002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C2003.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C2003.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C3001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C3001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\C3002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C3002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\D1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\D1001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\D1002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\D1002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\E1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\E1001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\E2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\E2001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\F1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\F1001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\G1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\G1001.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\G1002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\G1002.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\MyWebAPI\\wwwroot\\ProductPhotos\\G2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\G2001.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyWebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyWebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MyWebAPI.props",
+      "PackagePath": "build\\MyWebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MyWebAPI.props",
+      "PackagePath": "buildMultiTargeting\\MyWebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MyWebAPI.props",
+      "PackagePath": "buildTransitive\\MyWebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

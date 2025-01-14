@@ -10,6 +10,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<GuestBookContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("dbGuestBookConnection")));
 
+//5.3.3 在Program.cs中註冊及啟用Session，瀏覽器關掉才會消失，但也可以設定timeout例如登入後5分鐘沒動作就會失效之類的設定，也可以手動清掉
+//註冊Session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => {
+    //TimeOut時間，清掉就是所有Session清掉
+    options.IdleTimeout = TimeSpan.FromMinutes(10);
+});
+///
+
 //////-------------------------------------------------這行往下是啟用功能，往上是註冊-------------------------------------------
 ///
 var app = builder.Build();
@@ -25,15 +34,21 @@ using (var scope = app.Services.CreateScope())
 }
 
     // Configure the HTTP request pipeline.
-    if (!app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
     {
+        //例外發生時的處理頁面
         app.UseExceptionHandler("/Home/Error");
+        //下面的是頁面找不到之類的錯誤
+        app.UseStatusCodePagesWithReExecute("/Home/Error");
     }
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+
+//啟用Session
+app.UseSession();
 //MapControllerRoute 預設路徑
 app.MapControllerRoute(
     name: "default",

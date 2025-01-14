@@ -89,6 +89,12 @@ namespace MyModel_CodeFirst.Controllers
             return View(book);
         }
 
+        public IActionResult ExceptionTest()
+        {
+            int a = 0;
+            int b = 100 / a;
+            return View();
+        }
 
         private bool BookExists(string id)
         {

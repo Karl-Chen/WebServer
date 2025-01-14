@@ -14,12 +14,15 @@ namespace MyModel_CodeFirst.ViewComponents
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(string bookID)
+        public async Task<IViewComponentResult> InvokeAsync(string bookID, bool isDel=false)
         {
             // select * from ReBook
             // where BookID = @BookID
             // order by TimpStamp desc
             var db = await _context.Rebook.Where(r => r.BookID == bookID).OrderByDescending(r => r.TimeStmp).ToListAsync();
+            if (isDel)
+                return View("Delete", db);
+
             return View(db);
         }
     }

@@ -15,5 +15,6 @@ namespace MyModel_CodeFirst.Models
 
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Rebook> Rebook { get; set; }
+        public virtual DbSet<Login> Login { get; set; }
     }
 }
