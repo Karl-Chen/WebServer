@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CodeFirstModelExam.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">新增留言</a>
+</p>
+<div class="row">
+    @foreach(var item in Model)
+    {
+        <div class="col-xl-6">
+            <div class="card mb-4 border-info">
+                @if (item.Photo != null)
+                {
+                    <img src="~/BookPhotos/@item.Photo" class="cardcard-img-top img-thumbnail"/>
+                }
+                <div class="card-body">
+                    <h3>@item.Title</h3>
+                    <p>@Html.Raw(item.Description.Replace("\r\n", "<br>"))</p>
+                </div>
+                <div class="card-footer">
+                    <h5 class="text-end">@Html.DisplayFor(modelItem => item.Author) 發表於 @Html.DisplayFor(modelItem => item.TimeStmp) | <a class="btn btn-info" asp-action="Content" asp-route-id="@item.BookID">點我看詳細</a></h5>
+                    
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using MyWebAPI.DTOs;
 
 namespace MyWebAPI.Models;
 
@@ -25,12 +26,17 @@ public partial class GoodStoreContext : DbContext
 
     public virtual DbSet<Product> Product { get; set; }
 
+    ////4.6.5 修改GoodStoreContext，增加ProductDTO的DbSet屬性
+    //public virtual DbSet<ProductDTO> ProductDTO { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=IMCSD-13;Database=GoodStore;TrustServerCertificate=True;User ID=karl;Password=pid/900af");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        //modelBuilder.Entity<ProductDTO>(entity => entity.HasNoKey());
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.CateID).HasName("PK__Category__27638D74DEE381D6");

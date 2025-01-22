@@ -125,3 +125,108 @@ namespace MyWebAPI.Controllers
 //[FromQuery]：將URL中的參數綁定到Action的參數上，當你希望從 URL 的取得資料時使用。
 //[FromHeader]：將HTTP請求中的標頭值綁定到Action的參數上，適合從Request Header中取得資料，例如Authentication Token、Client端資訊等。
 //[FromRoute]：將URL路由中的參數綁定到Action的參數上，當URL的某部分是動態的，需要取得這些路由參數時使用。
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+//4     使用Get取得資料
+
+//4.1   取得資料清單(ProductsController裡的第一個Get Action)
+//4.1.1 先使用Swagger測試及觀查目前Product的資料取得狀況
+//4.1.2 使用Include()同時取得關聯資料
+//4.1.3 使用Where()改變查詢的條件並測試
+//4.1.4 使用OrderBy()相關排序方法改變資料排序並測試
+//4.1.5 使用Select()抓取特定的欄位並測試
+//4.1.6 使用Swagger測試及觀查目前Product的資料取得狀況，並進行上述相關測試
+//※這裡有一些重要的觀念必須解釋及透過實作來加強印象，尤其資料表之間的關聯特性將會影響實作的方式※
+//※發生循環參照時可使用JsonIgnore來解決※
+
+
+//4.2   使用DTO(Data Transfer Object)資料傳輸物件
+//4.2.1 建立DTOs資料夾(這個步驟可視需求而定)來放置相關檔案
+//4.2.2 建立ProductDTO類別
+//4.2.3 改寫ProductsController裡的Get Action
+//4.2.4 使用Swagger測試
+//※想要抓取特定欄位最典型的方法就是使用DTO來傳輸※
+
+
+//4.3   取得特定資料(ProductsController裡的第二個Get Action)
+//4.3.1 先使用Swagger測試及觀查目前Product的資料取得狀況(理解參數及介接口)
+//4.3.2 使用Include()同時取得關聯資料並使用ProductDTO來傳遞資料
+//4.3.3 使用Swagger測試
+//※發生循環參照時可使用JsonIgnore來解決※
+
+
+//4.4   建立Product資料查詢功能
+//4.4.1 將資料轉換的程式寫成函數並再次改寫Get Action(※這種寫法架構才會好※)
+//4.4.2 加入產品類別搜尋
+//4.4.3 加入產品名稱關鍵字搜尋
+//4.4.4 加入價格區間搜區
+//4.4.5 加入產品敘述關鍵字搜尋
+//4.4.6 使用Swagger測試(輸入的條件越多越嚴苛)
+//4.4.7 利用Request URL在瀏覽器上執行測試
+//※這個部份在做時會因Linq的寫法不同造成資料處理完的型態有不同的結果※
+//※需依照Linq撰寫的方式及資料的同步或非同步取得，依其所需改變寫法※
+
+//4.4.8 修改先將資料載入內存的寫法
+
+
+//4.5   同時取得Category及Product一對多的關聯資料
+//4.5.1 先使用Swagger測試及觀查目前Category的資料取得狀況
+//4.5.2 建立CategoryDTO類別
+//4.5.3 改寫CategoriesController裡的第一個Get Action
+//4.5.4 使用Include()同時取得關聯資料並以CategoryDTO傳遞
+//4.5.5 使用Swagger測試
+//4.5.6 改寫CategoriesController裡的第二個Get Action
+//4.5.7 使用Include()同時取得關聯資料並以CategoryDTO傳遞
+//4.5.8 使用Swagger測試
+
+
+//4.6   使用SQL語法進行查詢
+//4.6.1 新增一個Get Action GetProductFormSQL()並設定介接口為[HttpGet("formSQL")]
+//4.6.2 用SQL語法撰寫與先前一樣的功能並使用DTO傳遞結果
+//4.6.3 製作關鍵字查詢
+//4.6.4 使用Swagger測試(這裡會發生錯誤，因為使用了合併查詢)
+//4.6.5 修改GoodStoreContext，增加ProductDTO的DbSet屬性
+//4.6.6 將_context.Product.FromSqlRaw(sql).ToListAsync();改為_context.ProductDTO.FromSqlRaw(sql).ToListAsync();
+//4.6.7 使用Swagger測試(這裡會發生ProductDTO沒有設定Primary Key的例外)
+//4.6.8 修改GoodStoreContext的OnModelCreating()，標示ProductDTO為HasNoKey
+//4.6.9 使用Swagger測試
+//※使用SQL語法進行查詢是SQL老手的習慣，雖然EF Core已經使用一段時間，但很多開發人員仍鍾情於SQL※
+//※不過使用SQL時需注意SQL Injection的問題，而我們使用SqlParameter來避免SQL Injection※
+//※使用參數化查詢是防止 SQL Injection 的有效方式，使用SqlParameter避免SQ字串接寫法，直接避免SQL Injection風險※
+
+
+//4.7   關於DbContext修改的優化做法
+//4.7.1 複製GoodStoreContext.cs並更名為GoodStoreContext2.cs
+//4.7.2 修改類別、建構子名稱及繼承父類別
+//4.7.3 只留下DTO的DbSet其他的DbSet全數刪除
+//4.7.4 OnModelCreating方法中只留下ProductDTO的Entity設定其他刪除
+//4.7.5 加入base.OnModelCreating(modelBuilder);來繼承父類別所的方法
+//4.7.6 將GoodStoreContext.cs中與ProductDTO有關的設置刪除
+//4.7.7 在Program裡註冊GoodStoreContext2的Service(※注意※原本註冊的GoodStoreContext不可刪掉)
+//4.7.8 修改ProductsController上方所注入的GoodStoreContext為GoodStoreContext2
+//4.7.9 使用Swagger測試
+//※如果我們只是直接去改了原本的Context，在開發的過程中如果發生必須重新執行DB First的動作時，Context內容將被重置※
+//※因此請善加利用物件導向的繼承寫法保持程式碼的彈性及再用性※
+
+
+
+//4.8   使用資料庫裡的預存程序
+//4.8.1 在GoodStore資料庫中建立預存程序，程式碼如下(這個預存程序可以讓我們使用類別ID查詢到產品資料)
+//------SQL語法------
+//use GoodStore
+//go
+//create proc getProductWithCateName
+//	@catID char(2)='A1'
+//as
+//begin
+//	select p.ProductID, p.ProductName, p.UnitPrice, p.Description, p.Discontinued, p.CatID, c.CateName
+//    from Product as p inner join Category as c on p.CatID=c.CateID where p.CatID=@catID
+//end
+//------SQL語法------
+//4.8.2 在ProductsController中建立一個新的Get Action
+//4.8.3 設置介接口為[HttpGet("fromProc/{id}")]，Action名稱可自訂，並使用ProductDTO來傳遞資料
+//4.8.4 使用預存程序進行查詢(參數的傳遞請使用SqlParameter)
+//4.8.5 使用Swagger測試

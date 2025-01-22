@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MyModel_CodeFirst.Models;
 using NuGet.Protocol;
@@ -22,7 +23,18 @@ namespace MyModel_CodeFirst.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(Login login)
         {
-            var result = await _context.Login.Where(m => m.Account == login.Account && m.Password == login.Password).FirstOrDefaultAsync();
+            //var result = await _context.Login.Where(m => m.Account == login.Account && m.Password == login.Password).FirstOrDefaultAsync();
+            // 直接寫資料庫語法
+            //string sql = "Select * from Login where Account = '" + login.Account + "'and Password = '" + login.Password + "'";
+            string sql = "Select * from Login where Account = @Account and Password = @Password";
+            SqlParameter[] parameters = 
+                {
+                    new SqlParameter("@Account", login.Account),
+                    new SqlParameter("@Password", login.Password)
+                };
+            var result = await _context.Login.FromSqlRaw(sql, parameters).FirstOrDefaultAsync();
+
+
             if (result != null)
             {
                 //登入完成後須發給證明，證明他已登入

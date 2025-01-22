@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MyWebAPI.DTOs;
 using MyWebAPI.Models;
 
 namespace MyWebAPI.Controllers
@@ -21,18 +22,28 @@ namespace MyWebAPI.Controllers
             _context = context;
         }
 
+
+        // 直接寫資料庫語法
+        //string sql = "Select * from Login where Account = '" + login.Account + "'and Password = '" + login.Password + "'";
+        //var result = await _context.Login.FromSqlRaw(sql).FirstOrDefaultAsync();
+
         // GET: api/Categories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
+        public async Task<ActionResult<IEnumerable<CategoryDTO>>> GetCategory()
         {
-            return await _context.Category.ToListAsync();
+            //4.5.3 改寫CategoriesController裡的第一個Get Action
+            //4.5.4 使用Include()同時取得關聯資料並以CategoryDTO傳遞
+            var category = await _context.Category.Include(c => c.Product).Select(c => GetCategoryDTO(c)).ToListAsync();
+            return category;
         }
 
         // GET: api/Categories/5
-        [HttpGet("{id1}")]
-        public async Task<ActionResult<Category>> GetCategory([FromQuery]string id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CategoryDTO>> GetCategory([FromQuery]string id)
         {
-            var category = await _context.Category.FindAsync(id);
+            var category = await _context.Category.Include(c => c.Product).Where(c=>c.CateID == id).Select(c => GetCategoryDTO(c)).FirstOrDefaultAsync();
+            //var category = await _context.Category.FindAsync(id);
+           
 
             if (category == null)
             {
@@ -117,6 +128,19 @@ namespace MyWebAPI.Controllers
         private bool CategoryExists(string id)
         {
             return _context.Category.Any(e => e.CateID == id);
+        }
+
+        //4.5.4 使用Include()同時取得關聯資料並以CategoryDTO傳遞
+        private static CategoryDTO GetCategoryDTO(Category c)
+        {
+            var categoryDTO = new CategoryDTO
+            {
+                CateID = c.CateID,
+                CateName = c.CateName,
+                Product = c.Product
+
+            };
+            return categoryDTO;
         }
     }
 }

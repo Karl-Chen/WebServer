@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyWebAPI.Models.Category, MyWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyWebAPI.DTOs.CategoryDTO, MyWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -36,6 +36,37 @@
     "ReturnTypes": [
       {
         "Type": "MyWebAPI.Models.Category",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyWebAPI.Controllers.CategoriesController",
+    "Method": "GetCategory",
+    "RelativePath": "apiCategories/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MyWebAPI.DTOs.CategoryDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -83,47 +114,52 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MyWebAPI.Controllers.CategoriesController",
-    "Method": "GetCategory",
-    "RelativePath": "apiCategories/{id1}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "id1",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "MyWebAPI.Models.Category",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "MyWebAPI.Controllers.ProductsController",
     "Method": "GetProduct",
     "RelativePath": "apiProducts",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "cateID",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "descript",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyWebAPI.Models.Product, MyWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyWebAPI.DTOs.ProductDTO, MyWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -175,7 +211,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MyWebAPI.Models.Product",
+        "Type": "MyWebAPI.DTOs.ProductDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -221,6 +257,88 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyWebAPI.Controllers.ProductsController",
+    "Method": "GetProductFromProc",
+    "RelativePath": "apiProducts/fromProc/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyWebAPI.DTOs.ProductDTO, MyWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyWebAPI.Controllers.ProductsController",
+    "Method": "GetProductFromSQL",
+    "RelativePath": "apiProducts/fromSQL",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cateID",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "descript",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyWebAPI.DTOs.ProductDTO, MyWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MyWebAPI.Controllers.ValuesController",

@@ -1,0 +1,325 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CodeFirstModelExam.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CodeFirstModelExam.5cixxjv1cv.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\04c8dbfa-afa9-4a91-bc2f-e82a829d6c94.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\04c8dbfa-afa9-4a91-bc2f-e82a829d6c94.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\0d141d53-6f6e-4503-842a-fc22e4ee1bb0.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\0d141d53-6f6e-4503-842a-fc22e4ee1bb0.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\18497323-fdc3-4db1-a9a0-b645eb39ea72.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\18497323-fdc3-4db1-a9a0-b645eb39ea72.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\22b516d4-2b6a-472f-b0da-d2028b5460b7.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\22b516d4-2b6a-472f-b0da-d2028b5460b7.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\2fba9674-7870-432c-a4fb-5ad386ce0f7b.jpeg",
+      "PackagePath": "staticwebassets\\BookPhotos\\2fba9674-7870-432c-a4fb-5ad386ce0f7b.jpeg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\3ac346f4-65d0-40bf-b808-c9ea7ae55953.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\3ac346f4-65d0-40bf-b808-c9ea7ae55953.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\45131197-fa5a-4f35-bb7e-1baacd261547.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\45131197-fa5a-4f35-bb7e-1baacd261547.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\519291c1-9b70-4f21-9edf-f0fac86ff582.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\519291c1-9b70-4f21-9edf-f0fac86ff582.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\66bfbf5d-6a10-4b31-88d4-04d8642e8b0c.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\66bfbf5d-6a10-4b31-88d4-04d8642e8b0c.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\a076bf0b-beb1-4504-bc58-16488bde1a91.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\a076bf0b-beb1-4504-bc58-16488bde1a91.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\b55922fb-dfae-4f99-81df-83861f2d8677.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\b55922fb-dfae-4f99-81df-83861f2d8677.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\b8cb15b3-8617-46fd-97bb-0bb18329df51.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\b8cb15b3-8617-46fd-97bb-0bb18329df51.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\e8174931-9fba-4001-a9a9-6b38821c1727.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\e8174931-9fba-4001-a9a9-6b38821c1727.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\BookPhotos\\f4fbeca7-a563-4ceb-b05c-d1045292d56c.jpg",
+      "PackagePath": "staticwebassets\\BookPhotos\\f4fbeca7-a563-4ceb-b05c-d1045292d56c.jpg"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\WebServer\\WebApp\\CodeFirstModelExam\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CodeFirstModelExam.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CodeFirstModelExam.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CodeFirstModelExam.props",
+      "PackagePath": "build\\CodeFirstModelExam.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CodeFirstModelExam.props",
+      "PackagePath": "buildMultiTargeting\\CodeFirstModelExam.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CodeFirstModelExam.props",
+      "PackagePath": "buildTransitive\\CodeFirstModelExam.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

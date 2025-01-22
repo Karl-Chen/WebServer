@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/CategoryDTO"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/CategoryDTO"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/CategoryDTO"
                   }
                 }
               }
@@ -89,7 +89,7 @@
         }
       }
     },
-    "/apiCategories/{id1}": {
+    "/apiCategories/{id}": {
       "get": {
         "tags": [
           "Categories"
@@ -103,7 +103,7 @@
             }
           },
           {
-            "name": "id1",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -117,25 +117,23 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/CategoryDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/CategoryDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/CategoryDTO"
                 }
               }
             }
           }
         }
-      }
-    },
-    "/apiCategories/{id}": {
+      },
       "put": {
         "tags": [
           "Categories"
@@ -201,6 +199,61 @@
         "tags": [
           "Products"
         ],
+        "parameters": [
+          {
+            "name": "cateID",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProductName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "minPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "descript",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "price",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double",
+              "default": 0
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -209,7 +262,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Product"
+                    "$ref": "#/components/schemas/ProductDTO"
                   }
                 }
               },
@@ -217,7 +270,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Product"
+                    "$ref": "#/components/schemas/ProductDTO"
                   }
                 }
               },
@@ -225,7 +278,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Product"
+                    "$ref": "#/components/schemas/ProductDTO"
                   }
                 }
               }
@@ -280,6 +333,147 @@
         }
       }
     },
+    "/apiProducts/fromSQL": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "cateID",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProductName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "minPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "maxPrice",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "descript",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "price",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apiProducts/fromProc/{id}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/apiProducts/{id}": {
       "get": {
         "tags": [
@@ -301,17 +495,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/ProductDTO"
                 }
               }
             }
@@ -641,6 +835,27 @@
         },
         "additionalProperties": false
       },
+      "CategoryDTO": {
+        "type": "object",
+        "properties": {
+          "cateID": {
+            "type": "string",
+            "nullable": true
+          },
+          "cateName": {
+            "type": "string",
+            "nullable": true
+          },
+          "product": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Product": {
         "type": "object",
         "properties": {
@@ -665,6 +880,43 @@
             "nullable": true
           },
           "cateID": {
+            "type": "string",
+            "nullable": true
+          },
+          "cate": {
+            "$ref": "#/components/schemas/Category"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductDTO": {
+        "type": "object",
+        "properties": {
+          "productID": {
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "cateID": {
+            "type": "string",
+            "nullable": true
+          },
+          "cateName": {
+            "type": "string",
+            "nullable": true
+          },
+          "picture": {
             "type": "string",
             "nullable": true
           }

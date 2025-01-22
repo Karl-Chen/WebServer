@@ -1,0 +1,31 @@
+﻿@model CodeFirstModelExam.Models.Rebook
+
+@{
+    Layout = null;
+}
+
+
+<div class="row">
+    <div class="col">
+        <form asp-action="Create" id="reBookForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input name="ReBookID" type="hidden" value="@Guid.NewGuid()" />
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+
+            <input type="hidden" value="@ViewData["BookID"]" name="BookID" />
+
+            @* <div class="form-group"> *@
+            @*     <input type="submit" value="回覆留言" class="btn btn-primary" /> *@
+            @* </div> *@
+        </form>
+    </div>
+</div>

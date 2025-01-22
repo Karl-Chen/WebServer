@@ -15,7 +15,12 @@
             @foreach (var item in Model.Departments)
             {
                 @* <a class="list-group-item text-center" href="Mystudents/Index?deptid=@item.DeptID">@item.DeptName</a> *@
-                <a class="list-group-item text-center" asp-action="Index" asp-route-deptid="@item.DeptID">@item.DeptName</a>
+                var count = 0;
+                if (item.students != null)
+                {
+                    count = item.students.Count();                    
+                }
+                <a class="list-group-item text-center" asp-action="Index" asp-route-deptid="@item.DeptID">@(item.DeptName)(@count)</a>
             }
         </div>
     </div>

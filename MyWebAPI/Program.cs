@@ -5,6 +5,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyCorsPolicy", policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -15,7 +23,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<GoodStoreContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("dbGoodStoreConnection")));
 
+//4.7.7 在Program裡註冊GoodStoreContextCustom的Service(※注意※原本註冊的GoodStoreContext不可刪掉)
+builder.Services.AddDbContext<GoodStoreContextCustom>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("dbGoodStoreConnection")));
+
 var app = builder.Build();
+
+app.UseCors("MyCorsPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

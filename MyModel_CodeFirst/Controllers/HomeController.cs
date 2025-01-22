@@ -71,7 +71,7 @@ namespace MyModel_CodeFirst.Controllers
 //      ※※※注意注意※※※ 請先確定專案是否正確
 //      ※※※注意注意※※※ 請先確定專案是否正確
 //      (1)Add-Migration InitialCreate
-//      (2)Update-database
+//      (2)cc
 //      ※第(1)項的「InitialCreate﹞是自訂的名稱，若執行成功會看到「Build succeeded.」※
 //      ※另外會看到一個Migrations的資料夾及其檔案被建立在專案中，裡面紀錄著Migration的歷程※
 //      ※第(1)項指令執行成功才能執行第(2)項指令※
