@@ -4,6 +4,7 @@ using System.Drawing.Design;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -19,10 +20,13 @@ namespace MyWebAPI.Controllers
     {
         private readonly GoodStoreContextCustom _context;
 
+        private readonly IWebHostEnvironment _env;
+
         //4.7.8 修改ProductsController上方所注入的MyStoreContext為MyStoreContext2
-        public ProductsController(GoodStoreContextCustom context)
+        public ProductsController(GoodStoreContextCustom context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         // GET: api/Products
@@ -170,14 +174,35 @@ namespace MyWebAPI.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(string id, Product product)
+        public async Task<IActionResult> PutProduct(string id, [FromForm]ProductPutDTO product)
         {
-            if (id != product.ProductID)
+            if (id == null)
             {
                 return BadRequest();
             }
 
-            _context.Entry(product).State = EntityState.Modified;
+            var ret = await _context.Product.FindAsync(id);
+            if (ret == null)
+            {
+                return BadRequest("查無此資料");
+            }
+            
+            if (product.ProductName != null)
+                ret.ProductName = product.ProductName;
+
+            if (product.Price != null)
+                ret.Price = (decimal)product.Price;
+
+            if (product.Description != null)
+                ret.Description = product.Description;
+
+            if (product.Picture != null || product.Picture.Length > 0)
+            {
+                ret.Picture = UpLoadProductPicture(product.Picture, id);
+                
+            }
+
+            _context.Entry(ret).State = EntityState.Modified;
 
             try
             {
@@ -195,13 +220,13 @@ namespace MyWebAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(ret);
         }
 
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<Product>> PostProduct([FromForm] Product product)
         {
             _context.Product.Add(product);
             try
@@ -223,6 +248,49 @@ namespace MyWebAPI.Controllers
             return CreatedAtAction("GetProduct", new { id = product.ProductID }, product);
         }
 
+        //5.2.4 建立一個新的Post Action，介接口設定為[HttpPost("PostWithPhoto")]，並加入上傳檔案的動作(注入IWebHostEnvironment)
+        [HttpPost("PostWithPhoto")]
+        public async Task<ActionResult<Product>> PostProductWithPhoto([FromForm] ProductPostDTO product)
+        {
+            //檢查是否有上傳檔案，若有則上傳檔案並將資料寫入資料庫，若無則return BadReuqest
+
+            if (product.Picture == null || product.Picture.Length == 0)
+            {
+                return BadRequest("沒有上傳檔案");
+            }
+            //判斷是否上傳的是圖檔(副檔名)
+            var fileName = UpLoadProductPicture(product.Picture, product.ProductID);
+            if (fileName == "只能上傳JPG格式的圖片")
+                return BadRequest(fileName);
+
+            Product p = new Product();
+            p.ProductID = product.ProductID;
+            p.ProductName = product.ProductName;
+            p.Price = product.Price;
+            p.Description = product.Description;
+            p.Picture = fileName;
+            p.CateID = product.CateID;
+
+            _context.Product.Add(p);
+            try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateException)
+                {
+                    if (ProductExists(product.ProductID))
+                    {
+                        return Conflict();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+            return CreatedAtAction("GetProduct", new { id = product.ProductID }, product);
+        }
+
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(string id)
@@ -233,9 +301,34 @@ namespace MyWebAPI.Controllers
                 return NotFound();
             }
 
+            var fileName = product.Picture;
+            if (!DeleteFile(fileName))
+                return BadRequest("刪除照片失敗");
+
             _context.Product.Remove(product);
             await _context.SaveChangesAsync();
 
+            return NoContent();
+        }
+
+        //7.1.5 建立可刪除多筆資料的Delete Action，介接口設為[HttpDelete("ByCatID")]
+        //方法名稱可自訂，傳入的參為為商品類別ID
+        [HttpDelete("ByCatID")]
+        public async Task<IActionResult> DeleteProductsByCatID(string cateID)
+        {
+            var products = await _context.Product.Where(p => p.CateID == cateID).ToArrayAsync();
+            if (products == null || !products.Any())
+            {
+                return NotFound();
+            }
+            foreach (var product in products)
+            {
+                if (!DeleteFile(product.Picture))
+                    return BadRequest("刪除照片失敗");
+                _context.Product.Remove(product);
+                
+            }
+            await _context.SaveChangesAsync();
             return NoContent();
         }
 
@@ -257,6 +350,51 @@ namespace MyWebAPI.Controllers
                 Picture = p.Picture
             };
             return result;
+        }
+
+        private string UpLoadProductPicture(IFormFile Photo, string ProductID)
+        {
+            var allowedExtensions = new[] { ".jpg", ".jpeg" };
+            var extension = System.IO.Path.GetExtension(Photo.FileName);
+            if (!allowedExtensions.Contains(extension))
+            {
+                return "只能上傳JPG格式的圖片";
+
+            }
+            //圖片上傳路徑
+            var path = _env.ContentRootPath + "/wwwroot/ProductPhotos";
+            //判斷路徑是否存在，若無則建立
+            if (!System.IO.Directory.Exists(path))
+                System.IO.Directory.CreateDirectory(path);
+
+            string fileName = ProductID + extension;
+            var filePath = Path.Combine(path, fileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                Photo.CopyTo(stream);
+            }
+            return fileName;
+        }
+
+        private bool DeleteFile(string fileName)
+        {
+            var path = _env.ContentRootPath + "/wwwroot/ProductPhotos";
+            if (!System.IO.Directory.Exists(path))
+                return false;
+            var filePath = Path.Combine(path, fileName);
+            if (System.IO.File.Exists(filePath))
+            {
+                try
+                {
+                    System.IO.File.Delete(filePath);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

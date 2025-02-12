@@ -219,14 +219,127 @@ namespace MyWebAPI.Controllers
 //use GoodStore
 //go
 //create proc getProductWithCateName
-//	@catID char(2)='A1'
+//	@cateID char(2)='A1'
 //as
 //begin
-//	select p.ProductID, p.ProductName, p.UnitPrice, p.Description, p.Discontinued, p.CatID, c.CateName
-//    from Product as p inner join Category as c on p.CatID=c.CateID where p.CatID=@catID
+//	select p.ProductID, p.ProductName, p.Price, p.Description, p.CateID, c.CateName
+//    from Product as p inner join Category as c on p.CateID=c.CateID where p.CateID=@cateID
 //end
 //------SQL語法------
 //4.8.2 在ProductsController中建立一個新的Get Action
 //4.8.3 設置介接口為[HttpGet("fromProc/{id}")]，Action名稱可自訂，並使用ProductDTO來傳遞資料
 //4.8.4 使用預存程序進行查詢(參數的傳遞請使用SqlParameter)
 //4.8.5 使用Swagger測試
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//5     使用Post新增資料
+
+//※較常用到的三種資料來源方式[FromBody][FromForm][FromQuery]※
+//※若資料來源都是單純字串或數值等，預設為[FromBody]※
+
+//5.1   基本新增資料方式
+//5.1.1 先使用Swagger測試及觀查目前Product及Category的Post(注意其接收格式為JSON)
+//5.1.2 使用Swagger對此二個資料表做資料新增測試(此時可能會有required的錯誤)
+//5.1.3 修改Category.cs的Product屬性為非必填
+//5.1.4 修改Product.cs的Category屬性為非必填
+//5.1.5 使用Swagger再進行新增測試(應可成功新增寫入資料庫，但並無檔案之上傳)
+//※由於傳遞的是JSON格式資料，只要能對應到所有屬性，通過模型的驗證即可成功※//
+//※若是以JSON傳遞資料方式，則前端表單在傳遞時需先轉為JSON格式再拋給API※//
+//※不過因Product的前端表單中有上傳檔案的功能，因此後面必須再做修改※//
+
+
+//5.2   新增Product資料加入上傳照片功能
+//5.2.1 將ProductsController的Post Action標示為[FromForm]，使其能直接由前端表單接收資料
+//5.2.2 使用Swagger測試是否能正常新增(目前應會有錯誤,無法正常新增)
+//5.2.3 建立一個ProductPostDTO給Post利用DTO傳遞資料
+//5.2.4 建立一個新的Post Action，介接口設定為[HttpPost("PostWithPhoto")]，並加入上傳檔案的動作(注入IWebHostEnvironment)
+//(這裡我們不要把原來的Post刪掉，而是新做一個以利測試)
+//5.2.5 將上傳檔案寫成一個獨立的方法
+//5.2.6 使用Swagger測試
+//※如果Bind的資料模型類別中具有上傳檔案的物件(如IFormFile)，即使不標示資料來源為[FromForm]，它仍能自己判斷匹配為[FromForm]※//
+
+
+//5.3   資料驗證
+//5.3.1 在ProductPostDTO.cs加入需要的內建驗證器(Validator)
+//5.3.2 使用Swagger測試
+//※在一般的情況下我們只會在接收資料(Post、Put、Delete)時進行驗證，讀取資料則不會※
+//5.3.3 在ProductPostDTO.cs加入自訂驗證器(使用ValidationAttribute物件)
+//5.3.4 在需要使用此驗證器的屬性上加入標籤(這裡範例為ProductName屬性)
+//5.3.5 使用Swagger測試
+//5.3.6 建立CategoryPostDTO類別
+//5.3.7 在CategoryPostDTO.cs加入需要的內建驗證器(Validator)
+//5.3.8 在CategoryPostDTO.cs加入自訂驗證器(使用ValidationAttribute物件)
+//5.3.9 在需要使用此驗證器的屬性上加入標籤
+//5.3.10 修改CategoriesController的Post方法，使其傳遞CategoryPostDTO
+//5.3.11 修改Post Action 內的寫法
+//5.3.12 使用Swagger測試
+
+
+//※程式撰寫至此，我們可以發現DTO在WebAPI的建置中是相當重要的資料傳輸物件※
+//※除非你的API非常單純，否則您無法避免使用DTO物件※
+//※因此在API設計的時候，我們盡量不去動到原來的Model物件，資料的傳輸皆用DTO來取代※
+//※若DbContext物件的設計需求，我們則使用繼承的方式來使程式碼保持彈性※
+
+
+/////////////////////////////////////////////////////////////////////////////
+//6     使用Put修改資料
+
+//6.1   基本修改資料方式
+//6.1.1 先使用Swagger測試及觀查目前Product及Category的Put(注意其接收格式為JSON)
+//6.1.2 使用Swagger對此二個資料表做資料修改測試(這邊主要是觀察一下它們的資料呈現)
+//6.1.3 新增CategoryPutDTO類別
+//6.1.4 改寫CategoriesController中Put Action內容
+//6.1.5 使用Swagger測試
+//6.1.6 新增ProductPutDTO類別
+//6.1.7 改寫ProductsController中Put Action內容
+//6.1.8 使用Swagger測試
+
+
+/////////////////////////////////////////////////////////////////////////////
+//7     使用Delete刪除資料
+
+//7.1   基本刪除資料方式
+//7.1.1 改寫ProductsController中Delete Action內容，加入刪除照片的功能
+//7.1.2 將刪除照片功能另建立FileDelete()方法
+//7.1.3 使用Swagger測試
+//7.1.4 使用Swagger測試刪除Category資料(這裡會發生資料表關聯的完整性限制)
+//7.1.5 建立可刪除多筆資料的Delete Action，介接口設為[HttpDelete("ByCatID")]，方法名稱可自訂，傳入的參為為商品類別ID
+//7.1.6 使用Swagger測試
+//7.1.7 再次使用Swagger測試刪除Category資料
+//※一般要刪除父資料表的資料前，會先刪除與之關聯的子資料表所有資料，以確保資料不會被批次誤刪※
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+//8     程式碼重構-使用依賴注入(Dependency Injection-DI)
+
+//8.0   自訂資料驗證類別程式碼重構(未用到DI)
+//8.0.1 新增一個「ValidationAttributes」資料夾，並在資料夾中建立MyValidator.cs檔案
+//8.0.2 將原本寫在ProductPostDTO及CategoryPostDTO內的自訂驗證類別(ValidationAttributes)貼進MyValidator.cs檔案中
+//8.0.3 將原先的ValidationAttributes註解或刪除
+//8.0.4 使用Swagger測試
+
+
+//8.1   實作Service及DI
+//8.1.1 創建一個Service資料夾
+//8.1.2 在資料夾中建立SomeService.cs類別並實作內容
+//8.1.3 在Program.cs裡註冊SomeService服務
+//8.1.4 建立API控制器 SomeController
+//8.1.5 在SomeController裡注入SomeService服務(這裡就是DI的寫法，不使用 new 關鍵字)
+//8.1.6 撰寫兩個Get Action
+//8.1.7 使用Swagger測試
+
+
+//8.2   CategoriesController程式碼重構
+//8.2.1 在Service資料夾中建立CategoryService，並將CategoriesController裡的兩個Get Action相關的商業邏輯移至此撰寫
+//      (包括ItemProduct()方法一併移入CategoryService)
+//8.2.2 複製一個CategoriesController，並把檔名及class名字改掉(這個動作做不做都可以，只是要保留舊的寫法供參考用)
+//8.2.3 在Program.cs裡註冊CategoryService
+//8.2.4 在CategoriesController裡注入CategoryService服務
+//8.2.5 改寫CategoriesController裡的兩個Get Action寫法，僅留下控制邏輯
+//8.2.6 使用Swagger測試
+//8.2.7 將Post、Put及Delete重構
+//8.2.8 CategoriesController再重構
+//8.2.9 使用Swagger測試

@@ -19,7 +19,8 @@ public partial class Product
     public string CateID { get; set; } = null!;
 
     //[JsonIgnore]
-    public virtual Category Cate { get; set; } = null!;
+    //5.1.4 修改Product.cs的Category屬性為非必填
+    public virtual Category? Cate { get; set; }
     [JsonIgnore]
     public virtual ICollection<OrderDetail> OrderDetail { get; set; } = new List<OrderDetail>();
 

@@ -56,14 +56,20 @@ namespace MyWebAPI.Controllers
         // PUT: api/Categories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(string id, Category category)
+        public async Task<IActionResult> PutCategory(string id, [FromForm] CategoryPutOTD category)
         {
-            if (id != category.CateID)
-            {
+            //if (id != category.CateID)
+            //{
+            //    return BadRequest();
+            //}
+            if (id == null)
                 return BadRequest();
-            }
+            var catid = await _context.Category.FindAsync(id);
+            if (catid == null)
+                return NotFound("查無此資料");
+            catid.CateName = category.CateName;
 
-            _context.Entry(category).State = EntityState.Modified;
+            _context.Entry(catid).State = EntityState.Modified;
 
             try
             {
@@ -81,7 +87,8 @@ namespace MyWebAPI.Controllers
                 }
             }
 
-            return NoContent();
+            //return NoContent();
+            return Ok(catid);
         }
 
         // POST: api/Categories

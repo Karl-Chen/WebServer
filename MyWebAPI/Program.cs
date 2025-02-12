@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyWebAPI.Models;
+using MyWebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<SomeService>();
 
 //1.2.4 在Program.cs內以依賴注入的寫法撰寫讀取連線字串的物件
 //      ※注意程式的位置必須要在var builder = WebApplication.CreateBuilder(args);這句之後
