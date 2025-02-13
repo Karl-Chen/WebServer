@@ -343,3 +343,39 @@ namespace MyWebAPI.Controllers
 //8.2.7 將Post、Put及Delete重構
 //8.2.8 CategoriesController再重構
 //8.2.9 使用Swagger測試
+
+
+
+////////////////////////////////////////////////////////////////////////////
+//9     串接第三方的API做為自己的API
+
+
+//9.1   串接第三方API(本例以農業部資料開放平臺「動物認領養」資料為例)
+//※資料說明網址：https://data.moa.gov.tw/open_detail.aspx?id=QcbUEzN6E6DL
+//※資料介接位址：https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL
+//9.1.1 OpenData觀念說明
+//9.1.2 建立APIModels資料夾放置第三方API的資料模型類別
+//9.1.3 在APIModels資料夾新增PetAdoptionData.cs類別檔
+//9.1.4 利用資料介接位址所回傳的JSON格式建立PetAdoptionData類別屬性(複製一筆資料→編輯→選擇性貼上→貼上JSON做為類別)
+//9.1.5 建立一個空白的API Contoller-PetAdoptionController並設定介接位址
+//9.1.6 撰寫Get()方法，使用HttpClient物件取得第三方API的資料
+//9.1.7 使用Swagger測試
+//9.1.8 在Get()方法中加入分頁用參數
+//9.1.9 使用Swagger測試
+//9.1.10 利用第三方API所給的使用說明文件，另外撰寫至少兩個不同的查詢功能以利測試
+//9.1.11 使用Swagger測試
+//※我們可以靈活運用第三方API去組合及製作出不同的查詢功能(我們自己想要的)※
+
+
+
+//9.2   程式碼重構
+//※為了優化程式碼，我們在這裡進行程式碼重構
+//9.2.1 將分頁功能寫成函數
+//9.2.2 將PetAdoptionController中的HttpClient物件寫成DI方式
+//9.2.3 在Program.cs內註冊HttpClient物件
+//9.2.4 在Service資料夾中建立PetAdoptionService類別做為取得第三方API資料的服務
+//9.2.5 撰寫PetAdoptionService內容，包念HttpClient注入及取得資料的GetDataFromAPI方法
+//9.2.6 在Program.cs內註冊PetAdoptionService物件
+//9.2.7 將PetAdoptionService注入PetAdoptionController，並將原來注入的HttpClient相關程式碼註解
+//9.2.8 改寫每一個資料取得的方法內容
+//9.2.9 使用Swagger測試

@@ -7,22 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyWebAPI.DTOs;
 using MyWebAPI.Models;
-using MyWebAPI.Services;
 
 namespace MyWebAPI.Controllers
 {
     //3.1.4 修改API介接路由為「api[controller]」
     [Route("api[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class CategoriesOLDController : ControllerBase
     {
         private readonly GoodStoreContext _context;
-        private readonly CategoryService _categoryService;
 
-        public CategoriesController(GoodStoreContext context, CategoryService categoryService)
+        public CategoriesOLDController(GoodStoreContext context)
         {
             _context = context;
-            _categoryService = categoryService;
         }
 
 
@@ -34,34 +31,26 @@ namespace MyWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CategoryDTO>>> GetCategory()
         {
-            //4.5.3 改寫CategoriesController裡的第一個Get Action
+            //4.5.3 改寫CategoriesOLDController裡的第一個Get Action
             //4.5.4 使用Include()同時取得關聯資料並以CategoryDTO傳遞
-            //商業邏輯:你要做的功能就叫商業邏輯
-            //搬到CategoryServices
-            //var category = await _context.Category.Include(c => c.Product).Select(c => GetCategoryDTO(c)).ToListAsync();
-            //控制邏輯
-            var category = _categoryService.GetCategory();
-            if (category == null)
-            {
-                return NotFound("找不到任何資料");
-            }
-            return await category;
+            var category = await _context.Category.Include(c => c.Product).Select(c => GetCategoryDTO(c)).ToListAsync();
+            return category;
         }
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CategoryDTO>> GetCategory([FromQuery]string id)
         {
-            //商業邏輯搬到CategoryServices
-            var category = _categoryService.GetCategory(id);
+            var category = await _context.Category.Include(c => c.Product).Where(c=>c.CateID == id).Select(c => GetCategoryDTO(c)).FirstOrDefaultAsync();
             //var category = await _context.Category.FindAsync(id);
+           
 
             if (category == null)
             {
                 return NotFound();
             }
 
-            return await category;
+            return category;
         }
 
         // PUT: api/Categories/5
@@ -75,30 +64,54 @@ namespace MyWebAPI.Controllers
             //}
             if (id == null)
                 return BadRequest();
-
-            var cateOld = await _categoryService.FindCategory(id);
-            if (cateOld == null)
+            var catid = await _context.Category.FindAsync(id);
+            if (catid == null)
                 return NotFound("查無此資料");
+            catid.CateName = category.CateName;
 
-            var cate = _categoryService.UpdateCategory(cateOld, category);
-            if (cate == null)
-                return NotFound();
+            _context.Entry(catid).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CategoryExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             //return NoContent();
-            return Ok(cate);
+            return Ok(catid);
         }
 
         // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory([FromForm]CategoryPostOTD category)
+        public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            if (_categoryService.CategoryExists(category.CateID))
-                return Conflict("資料已存在");
-            var cate = await _categoryService.InsertCategory(category);
-
-            if (cate == null)
-                return Conflict();
+            _context.Category.Add(category);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CategoryExists(category.CateID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtAction("GetCategory", new { id = category.CateID }, category);
         }
@@ -107,18 +120,34 @@ namespace MyWebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(string id)
         {
-            var category = await _categoryService.FindCategory(id);
+            var category = await _context.Category.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            _categoryService.DeleteCategory(category);
+            _context.Category.Remove(category);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        
+        private bool CategoryExists(string id)
+        {
+            return _context.Category.Any(e => e.CateID == id);
+        }
 
+        //4.5.4 使用Include()同時取得關聯資料並以CategoryDTO傳遞
+        private static CategoryDTO GetCategoryDTO(Category c)
+        {
+            var categoryDTO = new CategoryDTO
+            {
+                CateID = c.CateID,
+                CateName = c.CateName,
+                Product = c.Product
+
+            };
+            return categoryDTO;
+        }
     }
 }

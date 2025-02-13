@@ -5,7 +5,7 @@ using MyWebAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+//跨域存取政策
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("MyCorsPolicy", policy =>
@@ -19,6 +19,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<SomeService>();
+//8.2.3 在Program.cs裡註冊CategoryService
+builder.Services.AddScoped<CategoryService>();
+
+//9.2.3 在Program.cs內註冊HttpClient物件
+builder.Services.AddScoped<HttpClient>();
+builder.Services.AddScoped<PetAdoptionService>();
 
 //1.2.4 在Program.cs內以依賴注入的寫法撰寫讀取連線字串的物件
 //      ※注意程式的位置必須要在var builder = WebApplication.CreateBuilder(args);這句之後
@@ -28,6 +34,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("dbGoodStoreConne
 //4.7.7 在Program裡註冊GoodStoreContextCustom的Service(※注意※原本註冊的GoodStoreContext不可刪掉)
 builder.Services.AddDbContext<GoodStoreContextCustom>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("dbGoodStoreConnection")));
+
 
 var app = builder.Build();
 
