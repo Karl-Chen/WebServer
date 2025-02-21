@@ -1,0 +1,389 @@
+{
+  "Files": [
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\GoodStore.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GoodStore.fzcc6f8ml3.bundle.scp.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\A2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A2001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\A2002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A2002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\A3001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A3001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\A3002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A3002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\A4001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\A4001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B1001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B2001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B2002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B2002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B3001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B3002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B3003.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3003.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B3004.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3004.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B3005.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B3005.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\B4001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\B4001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C1001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C1002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C1002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C1003.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C1003.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C2001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C2002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C2002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C2003.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C2003.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C3001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C3001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\C3002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\C3002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\D1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\D1001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\D1002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\D1002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\E1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\E1001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\E2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\E2001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\F1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\F1001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\G1001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\G1001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\G1002.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\G1002.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\ProductPhotos\\G2001.jpg",
+      "PackagePath": "staticwebassets\\ProductPhotos\\G2001.jpg"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "H:\\WebApp\\WebServer\\GoodStore\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GoodStore.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GoodStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.GoodStore.props",
+      "PackagePath": "build\\GoodStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.GoodStore.props",
+      "PackagePath": "buildMultiTargeting\\GoodStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.GoodStore.props",
+      "PackagePath": "buildTransitive\\GoodStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
